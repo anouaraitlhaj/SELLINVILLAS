@@ -9,6 +9,10 @@ body{
 a{
     text-decoration: none;
 }
+
+a:hover {
+    color: #ff5722;
+}
 header{
     width: 1140px;
     max-width: 80%;
@@ -23,11 +27,11 @@ header a{
     color: #eee;
     margin-right: 40px;
 }
-/* container */
+
 .carousel{
     height: 55vh;
-    width: 80vw;
-    margin-left: 10%;
+    width: 90vw;
+    margin-left: 5%;
     overflow: hidden;
     position: relative;
 }
@@ -64,423 +68,251 @@ header a{
 .carousel .list .item .topic{
     color: red;
 }
-/* thumbail */
-.thumbnail{
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    width: max-content;
-    z-index: 100;
+.custom-button {
+    margin-top: 30px;
+    margin-left: 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s; 
+    border-radius: 5px; 
+}
+.custom-button:hover {
+    background-color: white;
+    color: #ff5722; 
+    border: 1px solid #ff5722; 
+}
+
+/* Product Section Styles */
+#product {
+    padding: 50px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.prod {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.listProduct {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
+    justify-content: center;
 }
-.thumbnail .item{
-    width: 150px;
-    height: 220px;
-    position: relative;
+
+.listProduct .item {
+    flex: 1 1 calc(25% - 40px);
+    max-width: 300px;
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    text-align: center;
 }
-.thumbnail .item img{
-    width: 70%;
-    height: 80%;
+
+.listProduct .item img {
+    width: 100%;
+    height: 200px;
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
-.thumbnail .item .content{
-    color: beige;
-    position: absolute;
-    left: 10px;
-    right: 10px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+.listProduct .item h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
 }
-.thumbnail .item .content .title{
-    font-weight: 500;
+
+.listProduct .item p {
+    font-size: 1rem;
+    color: #aaa;
 }
-.thumbnail .item .content .description{
-    font-weight: 300;
+
+/* Contact Section Styles */
+#contact {
+    padding: 50px 0;
 }
-/* arrows */
-.arrows{
-    position: absolute;
-    top: 80%;
-    right: 52%;
-    z-index: 100;
-    width: 300px;
-    max-width: 30%;
+
+.contact-wrappper {
     display: flex;
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.contact-form,
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.contact-form h3,
+.contact-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #aaa;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.contact-form button {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #e64a19;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+    display: flex;
     align-items: center;
 }
-.arrows button{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #eee4;
-    border: none;
-    color: #fff;
-    font-family: monospace;
-    font-weight: bold;
-    transition: .5s;
-}
-.arrows button:hover{
-    background-color: #fff;
-    color: #000;
+
+.contact-info i {
+    margin-right: 10px;
+    color: #ff5722;
 }
 
-/* animation */
-.carousel .list .item:nth-child(1){
-    z-index: 1;
-}
-
-/* animation text in first item */
-
-.carousel .list .item:nth-child(1) .content .author,
-.carousel .list .item:nth-child(1) .content .title,
-.carousel .list .item:nth-child(1) .content .topic,
-.carousel .list .item:nth-child(1) .content .buttons
-{
-    transform: translateY(50px);
-    filter: blur(20px);
-    opacity: 0;
-    animation: showContent .5s 1s linear 1 forwards;
-}
-@keyframes showContent{
-    to{
-        transform: translateY(0px);
-        filter: blur(0px);
-        opacity: 1;
-    }
-}
-.carousel .list .item:nth-child(1) .content .title{
-    animation-delay: 1.2s!important;
-}
-.carousel .list .item:nth-child(1) .content .topic{
-    animation-delay: 1.4s!important;
-}
-.carousel .list .item:nth-child(1) .content .buttons{
-    animation-delay: 1.8s!important;
-}
-/* create animation when next click */
-.carousel.next .list .item:nth-child(1) img{
-    width: 150px;
-    height: 220px;
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    border-radius: 30px;
-    animation: showImage .2s linear 1 forwards;
-}
-@keyframes showImage{
-    to{
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 0;
-    }
-}
-
-.carousel.next .thumbnail .item:nth-last-child(1){
-    overflow: hidden;
-    animation: showThumbnail .2s linear 1 forwards;
-}
-.carousel.prev .list .item img{
-    z-index: 100;
-}
-@keyframes showThumbnail{
-    from{
-        width: 0;
-        opacity: 0;
-    }
-}
-.carousel.next .thumbnail{
-    animation: effectNext .5s linear 1 forwards;
-}
-
-@keyframes effectNext{
-    from{
-        transform: translateX(150px);
-    }
-}
-/* create animation when next click */
-.carousel.next .list .item:nth-child(1) img{
-    width: 150px;
-    height: 220px;
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    border-radius: 30px;
-    animation: showImage .5s linear 1 forwards;
-}
-@keyframes showImage{
-    to{
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 0;
-    }
-}
-
-.carousel.next .thumbnail .item:nth-last-child(1){
-    overflow: hidden;
-    animation: showThumbnail .5s linear 1 forwards;
-}
-.carousel.prev .list .item img{
-    z-index: 100;
-}
-@keyframes showThumbnail{
-    from{
-        width: 0;
-        opacity: 0;
-    }
-}
-.carousel.next .thumbnail{
-    animation: effectNext .5s linear 1 forwards;
-}
-
-@keyframes effectNext{
-    from{
-        transform: translateX(150px);
-    }
-}
-
-
-
-
-/* prev click */
-
-.carousel.prev .list .item:nth-child(2){
-    z-index: 2;
-}
-
-.carousel.prev .list .item:nth-child(2) img{
-    animation: outFrame 0.5s linear 1 forwards;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-@keyframes outFrame{
-    to{
-        width: 150px;
-        height: 220px;
-        bottom: 50px;
-        left: 50%;
-        border-radius: 20px;
-    }
-}
-
-.carousel.prev .thumbnail .item:nth-child(1){
-    overflow: hidden;
-    opacity: 0;
-    animation: showThumbnail .5s linear 1 forwards;
-}
-.carousel.next .arrows button,
-.carousel.prev .arrows button{
-    pointer-events: none;
-}
-.carousel.prev .list .item:nth-child(2) .content .author,
-.carousel.prev .list .item:nth-child(2) .content .title,
-.carousel.prev .list .item:nth-child(2) .content .topic,
-.carousel.prev .list .item:nth-child(2) .content .des,
-.carousel.prev .list .item:nth-child(2) .content .buttons
-{
-    animation: contentOut 1.5s linear 1 forwards!important;
-}
-
-@keyframes contentOut{
-    to{
-        transform: translateY(-150px);
-        filter: blur(20px);
-        opacity: 0;
-    }
-}
-@media screen and (max-width: 678px) {
-    .carousel .list .item .content{
-        padding-right: 0;
-    }
-    .carousel .list .item .content .title{
-        font-size: 30px;
-    }
-}
-/* PRODUCT LIST*/
-
-.container{
-    width: 1140px;
-    max-width: 80%;
-    padding-left: 25px;
-    padding-right: 25%;
-}
-.prod{
-    margin-top: 80px;
-    margin-bottom: 50px;
-    margin-left: 600px;
-    text-align: center;
-    font-size: xx-large;
-    padding: 20px 0;
-    
-}
-.listProduct .item img{
-    width: 350px;
-    height: 200px;
-}
-.listProduct{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-.listProduct .item{
-    margin-left: 40px;
-    background-color: lightgray;
-    padding: 20px;
-    border-radius: 20px;
-}
-.listProduct .item h2{
-    color: #000;
-    font-weight: 500;
-}
-.listProduct .item p{
-    color: #000;
-    letter-spacing: 7px;
-    font-size: small;
-}
-/* PRODUCT END*/
-/*contact section start*/
-.contact-wrappper{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-gap: 30px;
-}
-.contact-form{
-    margin-left: 130px;
-    text-align: left;
-}
-.contact-form h3{
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: lightgray;
-
-}
-.form-group{
-    margin-bottom: 20px;
-}
-input,textarea{
-    width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-    background-color: lightgray;
-    color: #000;
-}
-input:focus,
-textarea:focus{
-    outline: none;
-    box-shadow: 0 0 8px grey;
-}
-button{
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: lightgray;
-    border: none;
-    cursor: pointer;
-}
-button:hover{
-    background-color: black;
-    color: lightgray;
-}
-.contact-info h3{
-    margin-left: 300px;
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: lightgray;
-}
-.contact-info p{
-    margin-top: 30px;
-    margin-left: 300px;
-    margin-bottom: 30px;
-    color: lightgray;
-
-}
-.contact-info i{
-    color: lightgray;
-    margin-left: 40px;
-}
-/*contact section end*/
-
-
-
-/*footer*/
+/* Footer Styles */
 footer {
-    background-color: white;
-    margin-top: 20px;
+    background-color: #1a1a1a;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 50px;
 }
 
-.footer-Container {
-    width: 100%;
-    padding: 70px 30px 20px;
+.footerContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .socialIcons {
-    display: flex;
-    justify-content: center;
+    margin-bottom: 20px;
 }
 
 .socialIcons a {
-    text-decoration: none;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 50%;
-}
-
-.socialIcons a i {
-    font-size: 2em;
-    color: black;
-    opacity: 0.9;
-
+    margin: 0 10px;
+    font-size: 1.5rem;
+    color: white;
+    transition: color 0.3s ease;
 }
 
 .socialIcons a:hover {
-    
-    transition: 0.5s;
-}
-
-.socialIcons a i:hover {
-    color: lightgray;
-    transition: 0.5s;
-    transition: 0.5s;
-}
-
-.footerNav {
-    margin: 30px 0;
+    color: #ff5722;
 }
 
 .footerNav ul {
+    list-style: none;
+    padding: 0;
     display: flex;
     justify-content: center;
-    text-decoration: none;
+    gap: 20px;
 }
 
 .footerNav ul li a {
-    color: black;
-    margin: 20px;
-    font-size: 1.3em;
-    opacity: 0.7;
-    transition: 0.5s;
+    font-size: 1rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .footerNav ul li a:hover {
-    opacity: 1;
-    color: lightgray;
+    color: #ff5722;
 }
-
 .footerBottom {
-    background-color: white;
-    padding: 20px;
-    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #aaa;
 }
 
-.footerBottom p {
-    color: black;
+.footerBottom span {
+    color: #ff5722;
 }
-#black p{
-    color: white;
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .listProduct .item {
+        flex: 1 1 calc(50% - 40px);
+    }
+
+    .carousel .content .title {
+        font-size: 2rem;
+    }
+
+    .carousel .content .topic {
+        font-size: 1.2rem;
+    }
+
+    .footerNav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .listProduct .item {
+        flex: 1 1 100%;
+    }
+
+    .carousel .content .title {
+        font-size: 1.5rem;
+    }
+
+    .carousel .content .topic {
+        font-size: 1rem;
+    }
 }
